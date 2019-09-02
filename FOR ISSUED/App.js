@@ -6,7 +6,6 @@ import { CustomButton } from './src/Button';
 import { Ionicons } from '@expo/vector-icons';
 import { Process } from './src/Process';
 import { BookReceipt } from './src/BookReceipt';
-import { BookDetail } from './src/BookDetail';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -44,7 +43,7 @@ class HomeScreen extends Component {
         <View style={styles.container}>
           <ScrollView>
             <Process />
-            <BookDetail />
+            <BookReceipt />
           </ScrollView>
         </View>
       </>
