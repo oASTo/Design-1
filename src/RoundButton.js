@@ -1,38 +1,44 @@
 import React from 'react';
-import { TouchableWithoutFeedback, Text, StyleSheet } from 'react-native';
+import { TouchableWithoutFeedback, Text,View, StyleSheet } from 'react-native';
 
 function RoundButton(props) { 
   return (
     <TouchableWithoutFeedback>
+      <View style={styles.border}>
       <Text style={[props.fontSize==24?styles.round24: styles.round]}> 
         {props.title}
       </Text>
+      </View>
     </TouchableWithoutFeedback>
   );
 }
 
 
 const styles = StyleSheet.create({
-  round :{
-    width:75,
-    fontSize:10,
-    color :'black',
-    padding: 5,
-    borderWidth: 1,
-    borderRadius: 20,
-    textAlign: 'center',
-    margin: 5,
-    marginBottom:10,
-  },
-  round24 :{
-    fontSize:16,
-    color :'black',
-    paddingHorizontal: 75,
-    borderWidth: 1,
+  border:{
+    flexWrap:'wrap',
+    borderWidth:1,
     borderRadius: 100,
+    color:'black',
+    borderColor:'black',
+    marginBottom:15,
+    marginEnd:10,
+    
+  },
+  round :{
+    padding:10,
+    fontSize:10,
     textAlignVertical:'center',
     textAlign:'center',
+    justifyContent:'center',
+  },
+  round24 :{
+    fontSize:20,
+    paddingHorizontal: 75,
     marginBottom: 5,
+    textAlignVertical:'center',
+    textAlign:'center',
+    justifyContent:'center',
   },
   
 

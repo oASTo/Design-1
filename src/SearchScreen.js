@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Platform, ScrollView } from 'react-native';
 import { CustomButton } from './Button';
 import { Ionicons } from '@expo/vector-icons';
 import {Search} from './Search';
-import {History} from './History';
+import {RoundButton} from './RoundButton';
 
 export default class SearchScreen extends Component {
     constructor(props){
@@ -60,9 +60,11 @@ export default class SearchScreen extends Component {
           <Search />
           <ScrollView>
           <Text style={{paddingBottom:15, fontSize:16}}>Your History</Text>
+          <View style={{flexDirection:'row', flexWrap:'wrap'}}>
               {this.state.categories.map(item => (
-                  <History key={item.id} title={item.title}/>
+                  <RoundButton key={item.id} title={item.title}/>
               ))}
+              </View>
             </ScrollView>
           </View>
         </>

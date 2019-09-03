@@ -17,6 +17,7 @@ function Search(){
         />
         </View>
         <Text style={styles.search}>Legok</Text>
+        <View style={{borderWidth:1, borderColor:'#999999'} }/>
         </>
 
     );
@@ -27,10 +28,9 @@ export {Search}
 
 const styles = StyleSheet.create({
     search:{
-        borderBottomWidth:2,
-         borderColor:'#999999', 
          paddingBottom:10,
          marginBottom:5,
+         fontWeight:'bold',
     },
 }
 )
