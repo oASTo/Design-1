@@ -4,9 +4,10 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { CustomButton } from './src/Button';
 import { Ionicons } from '@expo/vector-icons';
-import { Process } from './src/Process';
-import { BookReceipt } from './src/BookReceipt';
-import { BookDetail } from './src/BookDetail';
+import {Search} from './src/Search';
+import {History} from './src/History';
+import BookIssued from './src/BookIssued';
+import SearchScreen from './src/SearchScreen';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,52 +16,17 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-class HomeScreen extends Component {
-  static navigationOptions = {
-    headerTitle: 'Treatment Name',
-    headerLeft: <CustomButton title="<" />,
-    headerRight: (
-      <Ionicons
-        style={{ marginRight: 15 }}
-        name="md-menu"
-        size={32}
-        color="#999999"
-      />
-    ),
-
-    headerStyle: {
-      backgroundColor: '#E7E7E7'
-    },
-    //headerTintColor: '#0ff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      color: '#999999'
-    }
-  };
-
-  render() {
-    return (
-      <>
-        <View style={styles.container}>
-          <ScrollView>
-            <Process />
-            <BookDetail />
-          </ScrollView>
-        </View>
-      </>
-    );
-  }
-}
 
 const AppNavigator = createStackNavigator(
   {
-    Home: HomeScreen
+    Search : SearchScreen,
+    BookIssued: BookIssued,
   },
   {
     headerLayoutPreset: 'center'
   },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Search'
   }
 );
 

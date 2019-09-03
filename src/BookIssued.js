@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, ScrollView } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { CustomButton } from './src/Button';
+import { CustomButton } from './Button';
 import { Ionicons } from '@expo/vector-icons';
-import { Process } from './src/Process';
-import { BookReceipt } from './src/BookReceipt';
+import { Process } from './Process';
+import { BookReceipt } from './BookReceipt';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu'
-});
-
-class HomeScreen extends Component {
+export default class BookIssued extends Component {
   static navigationOptions = {
-    headerTitle: 'Treatment Name',
+    headerTitle: 'Search',
     headerLeft: <CustomButton title="<" />,
     headerRight: (
       <Ionicons
@@ -48,25 +39,6 @@ class HomeScreen extends Component {
         </View>
       </>
     );
-  }
-}
-
-const AppNavigator = createStackNavigator(
-  {
-    Home: HomeScreen
-  },
-  {
-    headerLayoutPreset: 'center'
-  },
-  {
-    initialRouteName: 'Home'
-  }
-);
-
-const AppContainer = createAppContainer(AppNavigator);
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
   }
 }
 
