@@ -93,6 +93,7 @@ export default class BuyTreatmentScreen extends Component {
     return (
       <>
         <View style={styles.container}>
+          <View style={{marginVertical:5, backgroundColor:'white', flexWrap:'wrap', padding:5}}>
           <Text
             style={{
               fontWeight: 'bold',
@@ -102,9 +103,9 @@ export default class BuyTreatmentScreen extends Component {
           >
             Treatment Detail
           </Text>
-          <View style={styles.itemspacing} />
+          
 
-          <View style={{ flexDirection: 'row', justifyContent:"space-around"}}>
+          <View style={{ flexDirection: 'row', justifyContent:"space-around",}}>
             <Item title="Treatment" />
             <View style={{flexDirection:'column'}}>
             <Text>Dinda Radina Skin Specialist</Text>
@@ -120,13 +121,12 @@ export default class BuyTreatmentScreen extends Component {
             </View>
             
           </View>
-          <View style={styles.itemspacing} />
+          </View>
 
             <Description />
 
-            <View style={styles.itemspacing} />
 
-          <View style={{ flexDirection: 'column' }}>
+          <View style={{ flexDirection: 'column', marginBottom:5,backgroundColor:'white', padding:5 }}>
             <View
               style={{
                 flexDirection: 'row',
@@ -157,9 +157,9 @@ export default class BuyTreatmentScreen extends Component {
             </View>
           </View>
 
-          <View style={{ flex: 1, flexWrap: 'wrap' }}>
+          <View style={{ flex: 1, flexWrap: 'wrap',backgroundColor:'white', marginVertical:5, padding:5}}>
             <Text>Available Clinic</Text>
-            <View style={styles.itemspacing} />
+            <View style={{marginVertical:5,}} />
 
             <ScrollView>
             {this.state.doctor.map(item => (
@@ -186,7 +186,8 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 15,
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor:'#E7E7E7'
   },
   itemspacing: {
     borderWidth: 2,
@@ -208,7 +209,7 @@ const styles = StyleSheet.create({
 
 function Description(){
   return(
-  <View style={{}}>
+  <View style={{marginTop:5, backgroundColor:'white', padding:5}}>
   <Text
     style={{
       fontWeight: 'bold',
@@ -217,12 +218,13 @@ function Description(){
   >
     Description
   </Text>
-  <View style={styles.itemspacing} />
+  <View style={{marginTop:5,}} />
   <Text>1 Unit Service diantara lain</Text>
   <Text>2 x Service A</Text>
   <Text>3 x Service B</Text>
   <Text>4 x Service C</Text>
   <Text>Menggunakan obat herbal, blablabla blablablab blablabla</Text>
+  
 </View>
 
   )

@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "qe-ngt",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "y7-2wb",
   "https": false
 }
