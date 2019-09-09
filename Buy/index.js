@@ -126,7 +126,7 @@ export default class BuyTreatmentScreen extends Component {
             <Description />
 
 
-          <View style={{ flexDirection: 'column', marginBottom:5,backgroundColor:'white', padding:5 }}>
+          <View style={{ flexDirection: 'column', marginVertical:5,backgroundColor:'white', padding:5 }}>
             <View
               style={{
                 flexDirection: 'row',
@@ -137,16 +137,18 @@ export default class BuyTreatmentScreen extends Component {
               <Text>Price </Text>
               <Text color="#FD7F06" fontWeight='bold'>Rp.3.200.000,-</Text>
             </View>
-
+            </View>
+            <View style={{ flexDirection: 'column', marginVertical:5,backgroundColor:'white', padding:5 }}>
             <View
               style={{
                 flexDirection: 'row',
                 flexWrap: 'wrap',
-                justifyContent: 'space-around'
+                justifyContent: 'space-around',
+                alignItems:'center',
               }}
             >
               <Text>Qty</Text>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
                 <PlusMinus title="-" onPress={this.qtydec}/>
                 
                 <View style={{borderWidth:1, margin:5, borderColor:'#F5F5F5'}}>
@@ -155,7 +157,8 @@ export default class BuyTreatmentScreen extends Component {
                 <PlusMinus title="+" onPress={this.qtyinc}/>
               </View>
             </View>
-          </View>
+            </View>
+          
 
           <View style={{ flex: 1, flexWrap: 'wrap',backgroundColor:'white', marginVertical:5, padding:5}}>
             <Text>Available Clinic</Text>
@@ -209,7 +212,7 @@ const styles = StyleSheet.create({
 
 function Description(){
   return(
-  <View style={{marginTop:5, backgroundColor:'white', padding:5}}>
+  <View style={{marginVertical:5, backgroundColor:'white', padding:5}}>
   <Text
     style={{
       fontWeight: 'bold',
