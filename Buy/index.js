@@ -7,7 +7,7 @@ import {
   Platform,
   ScrollView,
   Button,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
 import Item from './Item';
 import Clinics from './Clinics';
@@ -24,12 +24,12 @@ export default class BuyTreatmentScreen extends Component {
         { id: 3, name: 'Jessica Nail Specialist' },
         { id: 4, name: 'Yenny Facial Specialist' },
         { id: 5, name: 'Herryanto Nose Specialist' },
-        { id: 6, name: 'Jennifer Cheecks Specialist' },
+        { id: 6, name: 'Jennifer Cheecks Specialist' }
       ],
       qtycount: 0,
-      price:3200000,
-      totalprice:0,
-      totalpriceprint:"0",
+      price: 3200000,
+      totalprice: 0,
+      totalpriceprint: '0'
     };
     this.clickhandle = this.clickhandle.bind(this);
   }
@@ -45,16 +45,15 @@ export default class BuyTreatmentScreen extends Component {
   qtyinc = () => {
     this.setState({
       qtycount: this.state.qtycount + 1,
-      totalprice:this.state.totalprice + 3200000,
-    })
+      totalprice: this.state.totalprice + 3200000
+    });
   };
-
 
   qtydec = () => {
     if (this.state.qtycount > 0) {
       this.setState({
         qtycount: this.state.qtycount - 1,
-        totalprice:this.state.totalprice - 3200000,
+        totalprice: this.state.totalprice - 3200000
       });
     } else {
       return alert('qty must > 0 ');
@@ -93,40 +92,67 @@ export default class BuyTreatmentScreen extends Component {
     return (
       <>
         <View style={styles.container}>
-          <View style={{marginVertical:5, backgroundColor:'white', flexWrap:'wrap', padding:5}}>
-          <Text
+          <View
             style={{
-              fontWeight: 'bold',
-              fontSize: 16,
-              marginVertical: 5
+              marginVertical: 5,
+              backgroundColor: 'white',
+              flexWrap: 'wrap',
+              padding: 5
             }}
           >
-            Treatment Detail
-          </Text>
-          
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: 16,
+                marginVertical: 5
+              }}
+            >
+              Treatment Detail
+            </Text>
 
-          <View style={{ flexDirection: 'row', justifyContent:"space-around",}}>
-            <Item title="Treatment" />
-            <View style={{flexDirection:'column'}}>
-            <Text>Dinda Radina Skin Specialist</Text>
-            <View style={{flexDirection:'row'}}>
-            <View style={{  backgroundColor:'#E36E65',width:70,height:30, alignItems:'center', marginRight:10 }}>
-              <Ionicons name="md-heart" size={30}  />
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+            >
+              <Item title="Treatment" />
+              <View style={{ flexDirection: 'column' }}>
+                <Text>Dinda Radina Skin Specialist</Text>
+                <View style={{ flexDirection: 'row' }}>
+                  <View
+                    style={{
+                      backgroundColor: '#E36E65',
+                      width: 70,
+                      height: 30,
+                      alignItems: 'center',
+                      marginRight: 10
+                    }}
+                  >
+                    <Ionicons name="md-heart" size={30} />
+                  </View>
+                  <View
+                    style={{
+                      backgroundColor: '#E36E65',
+                      width: 70,
+                      height: 30,
+                      alignItems: 'center'
+                    }}
+                  >
+                    <Ionicons name="ios-list-box" size={30} />
+                  </View>
+                </View>
               </View>
-              <View style={{ backgroundColor:'#E36E65',width:70,height:30, alignItems:'center'}}>
-              <Ionicons name="ios-list-box" size={30}  />
-              </View>
-              </View>
-
             </View>
-            
-          </View>
           </View>
 
-            <Description />
+          <Description />
 
-
-          <View style={{ flexDirection: 'column', marginVertical:5,backgroundColor:'white', padding:5 }}>
+          <View
+            style={{
+              flexDirection: 'column',
+              marginVertical: 5,
+              backgroundColor: 'white',
+              padding: 5
+            }}
+          >
             <View
               style={{
                 flexDirection: 'row',
@@ -135,50 +161,75 @@ export default class BuyTreatmentScreen extends Component {
               }}
             >
               <Text>Price </Text>
-              <Text color="#FD7F06" fontWeight='bold'>Rp.3.200.000,-</Text>
+              <Text color="#FD7F06" fontWeight="bold">
+                Rp.3.200.000,-
+              </Text>
             </View>
-            </View>
-            <View style={{ flexDirection: 'column', marginVertical:5,backgroundColor:'white', padding:5 }}>
+          </View>
+          <View
+            style={{
+              flexDirection: 'column',
+              marginVertical: 5,
+              backgroundColor: 'white',
+              padding: 5
+            }}
+          >
             <View
               style={{
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 justifyContent: 'space-around',
-                alignItems:'center',
+                alignItems: 'center'
               }}
             >
               <Text>Qty</Text>
-              <View style={{ flexDirection: 'row', flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-                <PlusMinus title="-" onPress={this.qtydec}/>
-                
-                <View style={{borderWidth:1, margin:5, borderColor:'#F5F5F5'}}>
-                <Text style={{ margin: 10 }} >{this.state.qtycount}</Text>
-                </View> 
-                <PlusMinus title="+" onPress={this.qtyinc}/>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <PlusMinus title="-" onPress={this.qtydec} />
+
+                <View
+                  style={{ borderWidth: 1, margin: 5, borderColor: '#F5F5F5' }}
+                >
+                  <Text style={{ margin: 10 }}>{this.state.qtycount}</Text>
+                </View>
+                <PlusMinus title="+" onPress={this.qtyinc} />
               </View>
             </View>
-            </View>
-          
-
-          <View style={{ flex: 1, flexWrap: 'wrap',backgroundColor:'white', marginVertical:5, padding:5}}>
-            <Text>Available Clinic</Text>
-            <View style={{marginVertical:5,}} />
-
-            <ScrollView>
-            {this.state.doctor.map(item => (
-                  <Clinics key={item.id} title={item.name}/>
-              ))}
-
-            {/* tes liat leny eyes specialist dah jalan lom kalo lom */}
-            </ScrollView>
-
-            </View>
-          
-          <View style={styles.exeButton}>
-            <Text style={{fontWeight:'bold',color:'white'}}>Rp.{this.state.totalprice.toString()},-</Text>
-            <Text style={{fontWeight:'bold',color:'white'}}>Buy</Text>
           </View>
 
+          <View
+            style={{
+              flex: 1,
+              flexWrap: 'wrap',
+              backgroundColor: 'white',
+              marginVertical: 5,
+              padding: 5
+            }}
+          >
+            <Text>Available Clinic</Text>
+            <View style={{ marginVertical: 5 }} />
+
+            <ScrollView>
+              {this.state.doctor.map(item => (
+                <Clinics key={item.id} title={item.name} />
+              ))}
+
+              {/* tes liat leny eyes specialist dah jalan lom kalo lom */}
+            </ScrollView>
+          </View>
+
+          <View style={styles.exeButton}>
+            <Text style={{ fontWeight: 'bold', color: 'white' }}>
+              Rp.{this.state.totalprice.toString()},-
+            </Text>
+            <Text style={{ fontWeight: 'bold', color: 'white' }}>Buy</Text>
+          </View>
         </View>
       </>
     );
@@ -190,45 +241,43 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     flex: 1,
     flexDirection: 'column',
-    backgroundColor:'#E7E7E7'
+    backgroundColor: '#E7E7E7'
   },
   itemspacing: {
     borderWidth: 2,
     marginVertical: 5,
-    borderColor:'#F5F5F5'
+    borderColor: '#F5F5F5'
   },
   qty: {
     borderWidth: 1
   },
 
-  exeButton:{
-    paddingVertical:10,
-    flexDirection:'row',
-    backgroundColor:"#FD7F06",
-    borderRadius:5,
-    justifyContent:'space-around',
+  exeButton: {
+    paddingVertical: 10,
+    flexDirection: 'row',
+    backgroundColor: '#FD7F06',
+    borderRadius: 5,
+    justifyContent: 'space-around'
   }
 });
 
-function Description(){
-  return(
-  <View style={{marginVertical:5, backgroundColor:'white', padding:5}}>
-  <Text
-    style={{
-      fontWeight: 'bold',
-      flexWrap: 'wrap',
-    }}
-  >
-    Description
-  </Text>
-  <View style={{marginTop:5,}} />
-  <Text>1 Unit Service diantara lain</Text>
-  <Text>2 x Service A</Text>
-  <Text>3 x Service B</Text>
-  <Text>4 x Service C</Text>
-  <Text>Menggunakan obat herbal, blablabla blablablab blablabla</Text>
-  
-</View>
-
-  )
+function Description() {
+  return (
+    <View style={{ marginVertical: 5, backgroundColor: 'white', padding: 5 }}>
+      <Text
+        style={{
+          fontWeight: 'bold',
+          flexWrap: 'wrap'
+        }}
+      >
+        Description
+      </Text>
+      <View style={{ marginTop: 5 }} />
+      <Text>1 Unit Service diantara lain</Text>
+      <Text>2 x Service A</Text>
+      <Text>3 x Service B</Text>
+      <Text>4 x Service C</Text>
+      <Text>Menggunakan obat herbal, blablabla blablablab blablabla</Text>
+    </View>
+  );
 }
