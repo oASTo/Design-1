@@ -109,9 +109,17 @@ export default class BuyTreatmentScreen extends Component {
             >
               Treatment Detail
             </Text>
-
+          </View>
+          <ScrollView>
             <View
-              style={{ flexDirection: 'row', justifyContent: 'space-around' }}
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                padding: 5,
+                marginVertical: 5,
+                flexWrap: 'wrap',
+                backgroundColor: 'white'
+              }}
             >
               <Item title="Treatment" />
               <View style={{ flexDirection: 'column' }}>
@@ -141,88 +149,90 @@ export default class BuyTreatmentScreen extends Component {
                 </View>
               </View>
             </View>
-          </View>
 
-          <Description />
+            <Description />
 
-          <View
-            style={{
-              flexDirection: 'column',
-              marginVertical: 5,
-              backgroundColor: 'white',
-              padding: 5
-            }}
-          >
             <View
               style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around'
+                flexDirection: 'column',
+                marginVertical: 5,
+                backgroundColor: 'white',
+                padding: 5
               }}
             >
-              <Text>Price </Text>
-              <Text color="#FD7F06" fontWeight="bold">
-                Rp.3.200.000,-
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{
-              flexDirection: 'column',
-              marginVertical: 5,
-              backgroundColor: 'white',
-              padding: 5
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
-                alignItems: 'center'
-              }}
-            >
-              <Text>Qty</Text>
               <View
                 style={{
                   flexDirection: 'row',
                   flexWrap: 'wrap',
-                  justifyContent: 'center',
+                  justifyContent: 'space-around'
+                }}
+              >
+                <Text>Price </Text>
+                <Text color="#FD7F06" fontWeight="bold">
+                  Rp.3.200.000,-
+                </Text>
+              </View>
+            </View>
+            <View
+              style={{
+                flexDirection: 'column',
+                marginVertical: 5,
+                backgroundColor: 'white',
+                padding: 5
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: 'row',
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-around',
                   alignItems: 'center'
                 }}
               >
-                <PlusMinus title="-" onPress={this.qtydec} />
-
+                <Text>Qty</Text>
                 <View
-                  style={{ borderWidth: 1, margin: 5, borderColor: '#F5F5F5' }}
+                  style={{
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  }}
                 >
-                  <Text style={{ margin: 10 }}>{this.state.qtycount}</Text>
+                  <PlusMinus title="-" onPress={this.qtydec} />
+
+                  <View
+                    style={{
+                      borderWidth: 1,
+                      margin: 5,
+                      borderColor: '#F5F5F5'
+                    }}
+                  >
+                    <Text style={{ margin: 10 }}>{this.state.qtycount}</Text>
+                  </View>
+                  <PlusMinus title="+" onPress={this.qtyinc} />
                 </View>
-                <PlusMinus title="+" onPress={this.qtyinc} />
               </View>
             </View>
-          </View>
 
-          <View
-            style={{
-              flex: 1,
-              flexWrap: 'wrap',
-              backgroundColor: 'white',
-              marginVertical: 5,
-              padding: 5
-            }}
-          >
-            <Text>Available Clinic</Text>
-            <View style={{ marginVertical: 5 }} />
+            <View
+              style={{
+                flex: 1,
+                flexWrap: 'wrap',
+                backgroundColor: 'white',
+                marginVertical: 5,
+                padding: 5
+              }}
+            >
+              <Text>Available Clinic</Text>
+              <View style={{ marginVertical: 5 }} />
 
-            <ScrollView>
               {this.state.doctor.map(item => (
                 <Clinics key={item.id} title={item.name} />
               ))}
 
               {/* tes liat leny eyes specialist dah jalan lom kalo lom */}
-            </ScrollView>
-          </View>
+            </View>
+          </ScrollView>
 
           <View style={styles.exeButton}>
             <Text style={{ fontWeight: 'bold', color: 'white' }}>
