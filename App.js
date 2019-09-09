@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import BookIssued from './src/BookIssued';
 import SearchScreen from './src/SearchScreen';
+import BuyTreatmentScreen from './Buy/index'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,6 +16,7 @@ const instructions = Platform.select({
 
 const AppNavigator = createStackNavigator(
   {
+    BuyTreatment : BuyTreatmentScreen,
     Search : SearchScreen,
     BookIssued: BookIssued,
   },
@@ -22,7 +24,7 @@ const AppNavigator = createStackNavigator(
     headerLayoutPreset: 'center'
   },
   {
-    initialRouteName: 'Search'
+    initialRouteName: 'BuyTreatment'
   }
 );
 
